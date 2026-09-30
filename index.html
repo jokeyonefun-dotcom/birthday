@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#140810" />
+  <meta name="robots" content="noindex" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>生日快乐</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎂%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="ambient" aria-hidden="true"></canvas>
+
+  <button id="music-toggle" type="button" aria-label="暂停音乐" aria-pressed="true" hidden>
+    <span class="disc" aria-hidden="true"></span>
+  </button>
+
+  <section id="gate" class="gate">
+    <div class="gate-inner">
+      <p class="eyebrow">一份小小的惊喜</p>
+      <div class="gift" aria-hidden="true">
+        <div class="gift-lid">
+          <span class="lid-ribbon"></span>
+          <span class="bow"><span class="knot"></span></span>
+        </div>
+        <div class="gift-box">
+          <span class="ribbon-v"></span>
+          <span class="ribbon-h"></span>
+        </div>
+      </div>
+      <h1 class="gate-title">生日快乐</h1>
+      <p class="gate-name" id="gate-name"></p>
+      <button id="open-btn" type="button" class="open-btn">点击拆开惊喜</button>
+      <noscript><p class="noscript">请开启 JavaScript，惊喜才能打开。</p></noscript>
+    </div>
+  </section>
+
+  <main id="story" class="story" inert>
+    <section class="hero" id="hero">
+      <p class="eyebrow gold">Happy Birthday</p>
+      <h2 id="hero-title" class="hero-title"></h2>
+      <p id="hero-name" class="hero-name"></p>
+      <p class="hero-line">愿这一天，像你一样闪闪发光</p>
+      <a class="scroll-hint" href="#counter"><span>向下</span><i></i></a>
+    </section>
+
+    <section class="panel counter-section" id="counter">
+      <p class="eyebrow">我们的时光</p>
+      <h2 class="section-title">在一起的每一秒</h2>
+      <p class="since" id="since"></p>
+      <div class="days-wrap">
+        <span class="days-num" id="days">0</span>
+        <span class="days-unit">天</span>
+      </div>
+      <div class="hms">
+        <div class="unit"><span class="num" id="hours">00</span><span class="label">时</span></div>
+        <div class="unit"><span class="num" id="minutes">00</span><span class="label">分</span></div>
+        <div class="unit"><span class="num" id="seconds">00</span><span class="label">秒</span></div>
+      </div>
+    </section>
+
+    <section class="panel cake-section" id="cake-section">
+      <p class="eyebrow">许个愿</p>
+      <h2 class="section-title">吹灭蜡烛</h2>
+      <p class="hint" id="cake-hint">点一下烛火，把它吹灭</p>
+      <div class="cake-stage">
+        <div class="cake" id="cake">
+          <div class="candles" id="candles"></div>
+          <div class="tier tier-top"></div>
+          <div class="tier tier-mid"></div>
+          <div class="tier tier-bot"></div>
+          <div class="plate"></div>
+        </div>
+      </div>
+      <button id="blow-btn" type="button" class="blow-btn" hidden>对着麦克风吹气</button>
+      <p id="blow-msg" class="blow-msg" hidden></p>
+      <div id="blow-meter" class="blow-meter" hidden><span id="meter" class="meter"></span></div>
+    </section>
+  </main>
+
+  <section id="finale" class="finale" hidden aria-hidden="true">
+    <canvas id="fireworks" aria-hidden="true"></canvas>
+    <div class="finale-card">
+      <p class="eyebrow gold">Happy Birthday</p>
+      <h2 class="finale-title" id="finale-title"></h2>
+      <p class="finale-name" id="finale-name"></p>
+      <p class="wish" id="wish" aria-live="polite"></p>
+      <p class="sign" id="sign"></p>
+    </div>
+  </section>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
